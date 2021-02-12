@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/archery-152912__340.png","C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bin/Windows/Content/archery-152912__340.xnb","TextureProcessor","Texture2DContent",67145,496485,0.1914648
+"C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/ArialText.spritefont","C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bin/Windows/Content/ArialText.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21538,0.2339052
