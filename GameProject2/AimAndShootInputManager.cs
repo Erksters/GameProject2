@@ -13,13 +13,7 @@ namespace GameProject2
         private KeyboardState currentKeyboardState;
         private KeyboardState priorKeyboardState;
 
-        /// <summary>
-        /// Vector2 Direction for sprite velocity
-        /// </summary>
-        //public Vector2 Direction { get; private set; }
-
-
-        public int Angle = 45;
+        public int Angle = 0;
 
         public bool Launched = false;
 

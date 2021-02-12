@@ -18,7 +18,10 @@ namespace GameProject2
         
         private int targetHeight = 340;
 
-        public bool Nearby { get; set; } = false;
+        /// <summary>
+        /// Determine if the target was hit
+        /// </summary>
+        public bool TargetHit { get; set; } = false;
 
         private BoundingRectangle rectangleBounds;
 
@@ -35,6 +38,13 @@ namespace GameProject2
         }
 
         /// <summary>
+        /// Tell the target it was hit
+        /// </summary>
+        public void Update(bool targetHit)
+        {
+            TargetHit = targetHit;
+        }
+        /// <summary>
         /// Loads the sprite texture using the provided ContentManager
         /// </summary>
         /// <param name="content">The ContentManager to load with</param>
@@ -48,7 +58,7 @@ namespace GameProject2
         /// </summary>
         /// <param name="gameTime">The game time</param>
         /// <param name="spriteBatch">The spritebatch to render with</param>
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
 

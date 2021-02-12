@@ -36,3 +36,5 @@ C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\obj\Debug\netcoreapp3.1\GameProject2.genruntimeconfig.cache
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\ArialText.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\archery-152912__340.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\pistol-860-423.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\bullet-512_512.xnb
