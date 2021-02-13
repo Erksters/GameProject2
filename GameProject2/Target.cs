@@ -14,11 +14,14 @@ namespace GameProject2
 
         private Texture2D texture;
 
-        private int targetWidth = 365;
+        private int targetWidth = 100;
         
-        private int targetHeight = 340;
+        private int targetHeight = 100;
 
-        public bool Nearby { get; set; } = false;
+        /// <summary>
+        /// Determine if the target was hit
+        /// </summary>
+        public bool TargetHit { get; set; } = false;
 
         private BoundingRectangle rectangleBounds;
 
@@ -31,16 +34,23 @@ namespace GameProject2
         public Target(Vector2 position)
         {
             this.position = position;
-            this.rectangleBounds = new BoundingRectangle(position, targetWidth, targetHeight);
+            this.rectangleBounds = new BoundingRectangle(position, targetWidth/ 2, targetHeight / 2);
         }
 
+        /// <summary>
+        /// Tell the target it was hit
+        /// </summary>
+        public void Update(bool targetHit)
+        {
+            TargetHit = targetHit;
+        }
         /// <summary>
         /// Loads the sprite texture using the provided ContentManager
         /// </summary>
         /// <param name="content">The ContentManager to load with</param>
         public void LoadContent(ContentManager content)
         {
-            texture = content.Load<Texture2D>("archery-152912__340");
+            texture = content.Load<Texture2D>("target");
         }
 
         /// <summary>
@@ -48,7 +58,7 @@ namespace GameProject2
         /// </summary>
         /// <param name="gameTime">The game time</param>
         /// <param name="spriteBatch">The spritebatch to render with</param>
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
 
