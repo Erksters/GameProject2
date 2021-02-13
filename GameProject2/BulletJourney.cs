@@ -30,9 +30,9 @@ namespace GameProject2
 
             AimInputManager = new AimAndShootInputManager();
             targets = new List<Target>();
-            targets.Add(new Target(new Vector2(200, 200)));
-            bullet = new Bullet(new Vector2(20, 20), 0);
-            weapon = new Weapon(new Vector2(20, 20), 0);
+            targets.Add(new Target(new Vector2(650, 200)));
+            bullet = new Bullet(new Vector2(100, 400), 0);
+            weapon = new Weapon(new Vector2(100, 430), 0);
             base.Initialize();
 
         }
@@ -60,12 +60,25 @@ namespace GameProject2
             AimInputManager.Update(gameTime);
             foreach (var target in targets)
             {
-                if(target.RectangleBounds.CollidesWith(bullet.rectangleBounds))
-                target.Update(true);
+                if (target.RectangleBounds.CollidesWith(bullet.rectangleBounds)) 
+                { 
+                    AimInputManager.ResetGame();
+                    bullet.ResetGame(new Vector2(100, 400));
+                    weapon.ResetGame();
+                }
+            }
+
+            if (AimInputManager.Reset)
+            {
+                AimInputManager.ResetGame();
+                bullet.ResetGame(new Vector2(100, 400));
+                weapon.ResetGame();
             }
 
             bullet.Update(gameTime, AimInputManager.Angle, AimInputManager.Launched);
             weapon.Update(AimInputManager.Angle);
+
+           
             base.Update(gameTime);
 
         }
@@ -80,7 +93,7 @@ namespace GameProject2
             _spriteBatch.DrawString(myFont, $"Direction {AimInputManager.Angle}", new Vector2(30,30),Color.Black);
             foreach (var target in targets)
             {
-                //target.Draw(_spriteBatch);
+                target.Draw(_spriteBatch);
             }
             bullet.Draw(gameTime, _spriteBatch);
             weapon.Draw(_spriteBatch);

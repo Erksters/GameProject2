@@ -13,20 +13,22 @@ namespace GameProject2
         private KeyboardState currentKeyboardState;
         private KeyboardState priorKeyboardState;
 
-        public int Angle = 0;
+        public float Angle = 0;
 
         public bool Launched = false;
 
-        public void reset()
+        public bool Reset = false;
+
+        public void ResetGame()
         {
-            Angle = 45;
+            Angle = 0;
+            Launched = false;
+            Reset = false;
         }
         public void Update(GameTime gameTime)
         {
             priorKeyboardState = currentKeyboardState;
             currentKeyboardState = Keyboard.GetState();
-
-            //Direction = new Vector2(0, 0);
 
             ///Get Postion from Keyboard
         
@@ -44,24 +46,37 @@ namespace GameProject2
             if (currentKeyboardState.IsKeyDown(Keys.Up) && priorKeyboardState.IsKeyUp(Keys.Up)
                 || currentKeyboardState.IsKeyDown(Keys.W) && priorKeyboardState.IsKeyUp(Keys.W))
             {
-                if (currentKeyboardState.IsKeyDown(Keys.LeftShift) || currentKeyboardState.IsKeyDown(Keys.RightShift))
+                if ( currentKeyboardState.IsKeyDown(Keys.LeftShift) || currentKeyboardState.IsKeyDown(Keys.RightShift))
                 {
-                    Angle += 4;
+                    Angle -= (float)0.008;
+                    return;
                 }
-
-                Angle++;
+                else
+                {
+                    Angle -= (float)0.0032;
+                }                
             }
             //Down
             if (currentKeyboardState.IsKeyDown(Keys.Down) && priorKeyboardState.IsKeyUp(Keys.Down)
                 || currentKeyboardState.IsKeyDown(Keys.S) && priorKeyboardState.IsKeyUp(Keys.S))
             {
-                if(currentKeyboardState.IsKeyDown(Keys.LeftShift) || currentKeyboardState.IsKeyDown(Keys.RightShift))
+                if (currentKeyboardState.IsKeyDown(Keys.LeftShift) || currentKeyboardState.IsKeyDown(Keys.RightShift))
                 {
-                    Angle -= 4;
+                    Angle += (float)0.008;
+                    return;
                 }
-                Angle--;
+                else
+                {
+                    Angle += (float)0.0032;
+                }    
+            }
+            //Reset
+            if (currentKeyboardState.IsKeyDown(Keys.R) && priorKeyboardState.IsKeyUp(Keys.R)) 
+            {
+                Reset = true;
             }
         }
+
     }
 }
 

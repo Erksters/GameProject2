@@ -14,9 +14,9 @@ namespace GameProject2
 
         private Texture2D texture;
 
-        private int targetWidth = 365;
+        private int targetWidth = 100;
         
-        private int targetHeight = 340;
+        private int targetHeight = 100;
 
         /// <summary>
         /// Determine if the target was hit
@@ -34,7 +34,7 @@ namespace GameProject2
         public Target(Vector2 position)
         {
             this.position = position;
-            this.rectangleBounds = new BoundingRectangle(position, targetWidth, targetHeight);
+            this.rectangleBounds = new BoundingRectangle(position, targetWidth/ 2, targetHeight / 2);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace GameProject2
         /// <param name="content">The ContentManager to load with</param>
         public void LoadContent(ContentManager content)
         {
-            texture = content.Load<Texture2D>("archery-152912__340");
+            texture = content.Load<Texture2D>("target");
         }
 
         /// <summary>

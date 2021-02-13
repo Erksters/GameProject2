@@ -14,28 +14,37 @@ namespace GameProject2
         private Texture2D texture;
 
         private float rotation;
+
+        private int weaponWidth = 300;
+
+        private int weaponHeight = 200;
+
         public Weapon(Vector2 position, float rotation)
         {
             this.position = position;
             this.rotation = rotation;
         }
 
+        public void ResetGame()
+        {
+            rotation = 0;
+        }
 
         /// <summary>
         /// Loads the weapons's texture
         /// </summary>
         public void LoadContent(ContentManager content)
         {
-            texture = content.Load<Texture2D>("pistol-860-423");
-            
+            texture = content.Load<Texture2D>("weapon");
         }
 
         /// <summary>
         /// Update the weapons axis of rotation
         /// </summary>
-        public void Update(float rotation)
+        public void Update(float angle)
         {
-            this.rotation += rotation;
+            this.rotation = angle * (float)1.2;
+
         }
 
         /// <summary>
@@ -44,8 +53,10 @@ namespace GameProject2
         public void Draw(SpriteBatch spriteBatch)
         {
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
-
-            spriteBatch.Draw(texture,position,Color.White);
+            spriteBatch.Draw(texture, new Vector2(position.X, position.Y), 
+                null, Color.White, (rotation * 2), 
+                new Vector2(weaponWidth / 2 , weaponHeight/ 2), //TODO: resize image then insert rotation point
+                (float).5, SpriteEffects.None,0);
         }
     }
 }

@@ -4,10 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/archery-152912__340.png</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/ArialText.spritefont</File>
-    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bullet-512_512.png</File>
-    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/pistol-860-423.png</File>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/small-bullet.png</File>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Target.png</File>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Weapon.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
