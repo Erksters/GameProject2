@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/flame_exposion.png</SourceFile>
-  <SourceTime>2020-11-16T10:14:28.0888746-06:00</SourceTime>
+  <SourceTime>2021-02-13T14:18:35.6590411-06:00</SourceTime>
   <DestFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bin/Windows/Content/flame_exposion.xnb</DestFile>
-  <DestTime>2021-02-13T13:49:29.1745123-06:00</DestTime>
+  <DestTime>2021-02-13T14:18:36.6793366-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
