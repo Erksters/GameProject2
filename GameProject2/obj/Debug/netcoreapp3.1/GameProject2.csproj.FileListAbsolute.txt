@@ -38,3 +38,5 @@ C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\small-bullet.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\Weapon.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\Target.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\Gun.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\flame_exposion.xnb

@@ -20,6 +20,24 @@
 /processorParam:TextureFormat=Compressed
 /build:ArialText.spritefont
 
+#begin flame_exposion.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:flame_exposion.png
+
+#begin Gun.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Gun.wav
+
 #begin small-bullet.png
 /importer:TextureImporter
 /processor:TextureProcessor

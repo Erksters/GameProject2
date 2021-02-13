@@ -14,6 +14,7 @@ namespace GameProject2
         private List<Target> targets;
         private Bullet bullet;
         private Weapon weapon;
+        private Explision explosion;
 
         public BulletJourney()
         {
@@ -33,6 +34,7 @@ namespace GameProject2
             targets.Add(new Target(new Vector2(650, 200)));
             bullet = new Bullet(new Vector2(100, 400), 0);
             weapon = new Weapon(new Vector2(100, 430), 0);
+            explosion = new Explision(new Vector2(650, 200));
             base.Initialize();
 
         }
@@ -48,8 +50,7 @@ namespace GameProject2
 
             bullet.LoadContent(Content);
             weapon.LoadContent(Content);
-
-            // TODO: use this.Content to load your game content here
+            explosion.LoadContent(Content);
         }
 
         protected override void Update(GameTime gameTime)
@@ -61,10 +62,11 @@ namespace GameProject2
             foreach (var target in targets)
             {
                 if (target.RectangleBounds.CollidesWith(bullet.rectangleBounds)) 
-                { 
+                {
                     AimInputManager.ResetGame();
                     bullet.ResetGame(new Vector2(100, 400));
                     weapon.ResetGame();
+                    explosion.Update(false, true);
                 }
             }
 
@@ -73,14 +75,13 @@ namespace GameProject2
                 AimInputManager.ResetGame();
                 bullet.ResetGame(new Vector2(100, 400));
                 weapon.ResetGame();
+                explosion.ResetGame();
             }
 
             bullet.Update(gameTime, AimInputManager.Angle, AimInputManager.Launched);
             weapon.Update(AimInputManager.Angle);
-
-           
+            explosion.Update(AimInputManager.Launched, false);           
             base.Update(gameTime);
-
         }
 
         protected override void Draw(GameTime gameTime)
@@ -97,6 +98,7 @@ namespace GameProject2
             }
             bullet.Draw(gameTime, _spriteBatch);
             weapon.Draw(_spriteBatch);
+            explosion.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);
