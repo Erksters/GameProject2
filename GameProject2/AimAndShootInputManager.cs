@@ -13,7 +13,7 @@ namespace GameProject2
         private KeyboardState currentKeyboardState;
         private KeyboardState priorKeyboardState;
 
-        public float Angle = 0;
+        public Vector2 Angle = new Vector2(90,0);
 
         public bool Launched = false;
 
@@ -21,7 +21,7 @@ namespace GameProject2
 
         public void ResetGame()
         {
-            Angle = 0;
+            Angle = new Vector2(90, 0);
             Launched = false;
             Reset = false;
         }
@@ -46,37 +46,42 @@ namespace GameProject2
             if (currentKeyboardState.IsKeyDown(Keys.Up) && priorKeyboardState.IsKeyUp(Keys.Up)
                 || currentKeyboardState.IsKeyDown(Keys.W) && priorKeyboardState.IsKeyUp(Keys.W))
             {
-                if ( currentKeyboardState.IsKeyDown(Keys.LeftShift) || currentKeyboardState.IsKeyDown(Keys.RightShift))
+                if (Angle.X >= 0 && Angle.Y < 1)
                 {
-                    Angle -= (float)0.008;
-                    return;
+                    Angle = new Vector2(Angle.X - 5, Angle.Y - 5);
                 }
-                else
+
+                else if (Angle.X >= 0 && Angle.Y > -1)
                 {
-                    Angle -= (float)0.0032;
-                }                
+                    Angle = new Vector2(Angle.X + 5, Angle.Y - 5);
+                }
+                else { }
             }
             //Down
             if (currentKeyboardState.IsKeyDown(Keys.Down) && priorKeyboardState.IsKeyUp(Keys.Down)
                 || currentKeyboardState.IsKeyDown(Keys.S) && priorKeyboardState.IsKeyUp(Keys.S))
             {
-                if (currentKeyboardState.IsKeyDown(Keys.LeftShift) || currentKeyboardState.IsKeyDown(Keys.RightShift))
+
+                if (Angle.X >= 0 && Angle.Y > -1)
                 {
-                    Angle += (float)0.008;
-                    return;
+                    Angle = new Vector2(Angle.X - 5, Angle.Y + 5);
                 }
-                else
+
+                else if (Angle.X >= 0 && Angle.Y < 1)
                 {
-                    Angle += (float)0.0032;
-                }    
-            }
+                    Angle = new Vector2(Angle.X + 5, Angle.Y + 5);
+                }
+                //else { }
+            };
+
             //Reset
-            if (currentKeyboardState.IsKeyDown(Keys.R) && priorKeyboardState.IsKeyUp(Keys.R)) 
+            if (currentKeyboardState.IsKeyDown(Keys.R) && priorKeyboardState.IsKeyUp(Keys.R))
             {
                 Reset = true;
             }
-        }
 
+
+        }
     }
 }
 

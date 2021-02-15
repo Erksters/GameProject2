@@ -79,7 +79,7 @@ namespace GameProject2
             }
 
             bullet.Update(gameTime, AimInputManager.Angle, AimInputManager.Launched);
-            weapon.Update(AimInputManager.Angle);
+            //weapon.Update(AimInputManager.Angle);
             explosion.Update(AimInputManager.Launched, false);           
             base.Update(gameTime);
         }
@@ -92,6 +92,7 @@ namespace GameProject2
             _spriteBatch.Begin();
 
             _spriteBatch.DrawString(myFont, $"Direction {AimInputManager.Angle}", new Vector2(30,30),Color.Black);
+            _spriteBatch.DrawString(myFont, $"Rotation {bullet.rotation}", new Vector2(30, 60), Color.Black);
             foreach (var target in targets)
             {
                 target.Draw(_spriteBatch);
