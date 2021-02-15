@@ -18,7 +18,7 @@ namespace GameProject2
 
         public Vector2 Position;
 
-        private float rotation;
+        public float rotation;
 
         private float constantRotation = (float)0.001;
 
@@ -30,13 +30,13 @@ namespace GameProject2
         /// How quickly the bullet will travel across the screen
         /// Edit this for different bullet presents
         /// </summary>
-        public Vector2 velocity = new Vector2(300, 0);
+        public Vector2 velocity = new Vector2(90, 0);
 
         /// <summary>
         /// How much gravity will affect the bullet
         /// Edit this for different bullet presets
         /// </summary>
-        public Vector2 Gravity = new Vector2(0, 30);
+        public Vector2 Gravity = new Vector2(0, 10);
 
 
         public Bullet(Vector2 position, float initialRotation )
@@ -64,7 +64,7 @@ namespace GameProject2
         }
 
         
-        public void Update(GameTime gameTime, float angle, bool launched)
+        public void Update(GameTime gameTime, Vector2 angle, bool launched)
         {
             this.launched = launched;
             //If bullet is shot
@@ -88,8 +88,8 @@ namespace GameProject2
             else
             {
                 //TODO: update initial rotation of bullet
-                rotation = angle * (float)1.5;
-                velocity = velocity + new Vector2(0, angle * 10);
+                velocity = angle;
+                
             }
         }
 
