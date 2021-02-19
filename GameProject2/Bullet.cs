@@ -89,6 +89,7 @@ namespace GameProject2
             {
                 //TODO: update initial rotation of bullet
                 velocity = angle;
+                rotation = angle.Y / 60;
                 
             }
         }
@@ -99,7 +100,7 @@ namespace GameProject2
             if (launched) 
             {
                 spriteBatch.Draw(texture, new Vector2(Position.X, Position.Y),
-                null, Color.White, (rotation * (float)1.8),
+                null, Color.White, rotation,
                 new Vector2(bulletWidth / 2, bulletHeight / 2), //TODO: resize image then insert rotation point
                  (float).5, SpriteEffects.None, 0);
             }

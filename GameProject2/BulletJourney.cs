@@ -79,7 +79,7 @@ namespace GameProject2
             }
 
             bullet.Update(gameTime, AimInputManager.Angle, AimInputManager.Launched);
-            //weapon.Update(AimInputManager.Angle);
+            weapon.Update(AimInputManager.Angle);
             explosion.Update(AimInputManager.Launched, false);           
             base.Update(gameTime);
         }

@@ -41,9 +41,9 @@ namespace GameProject2
         /// <summary>
         /// Update the weapons axis of rotation
         /// </summary>
-        public void Update(float angle)
+        public void Update(Vector2 angle)
         {
-            this.rotation = angle * (float)1.2;
+            rotation = angle.Y / 60;
 
         }
 
@@ -54,7 +54,7 @@ namespace GameProject2
         {
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
             spriteBatch.Draw(texture, new Vector2(position.X, position.Y), 
-                null, Color.White, (rotation * 2), 
+                null, Color.White, rotation, 
                 new Vector2(weaponWidth / 2 , weaponHeight/ 2), //TODO: resize image then insert rotation point
                 (float).5, SpriteEffects.None,0);
         }
