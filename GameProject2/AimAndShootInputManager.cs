@@ -19,6 +19,8 @@ namespace GameProject2
 
         public bool Reset = false;
 
+        public int SpeedMulitiplier = 0;
+
         public void ResetGame()
         {
             Angle = new Vector2(90, 0);
@@ -30,8 +32,8 @@ namespace GameProject2
             priorKeyboardState = currentKeyboardState;
             currentKeyboardState = Keyboard.GetState();
 
+            SpeedMulitiplier = 0;
             ///Get Postion from Keyboard
-        
             if (currentKeyboardState.IsKeyDown(Keys.Space) && priorKeyboardState.IsKeyUp(Keys.Space))
             {
                 Launched = true;
@@ -71,8 +73,23 @@ namespace GameProject2
                 {
                     Angle = new Vector2(Angle.X + 5, Angle.Y + 5);
                 }
-                //else { }
+                else { }
             };
+
+            //Right
+            if (currentKeyboardState.IsKeyDown(Keys.Right) && priorKeyboardState.IsKeyUp(Keys.Right)
+                || currentKeyboardState.IsKeyDown(Keys.D) && priorKeyboardState.IsKeyUp(Keys.D))
+            {
+                SpeedMulitiplier++;
+
+            }
+
+            //Left
+            if (currentKeyboardState.IsKeyDown(Keys.Left) && priorKeyboardState.IsKeyUp(Keys.Left)
+                || currentKeyboardState.IsKeyDown(Keys.A) && priorKeyboardState.IsKeyUp(Keys.A))
+            {
+                SpeedMulitiplier--;
+            }
 
             //Reset
             if (currentKeyboardState.IsKeyDown(Keys.R) && priorKeyboardState.IsKeyUp(Keys.R))

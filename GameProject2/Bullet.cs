@@ -32,6 +32,7 @@ namespace GameProject2
         /// </summary>
         public Vector2 velocity = new Vector2(90, 0);
 
+        public int SpeedMultiplier = 1;
         /// <summary>
         /// How much gravity will affect the bullet
         /// Edit this for different bullet presets
@@ -64,7 +65,7 @@ namespace GameProject2
         }
 
         
-        public void Update(GameTime gameTime, Vector2 angle, bool launched)
+        public void Update(GameTime gameTime, Vector2 angle, bool launched, int speedMultiplier)
         {
             this.launched = launched;
             //If bullet is shot
@@ -73,10 +74,10 @@ namespace GameProject2
                 float time = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                 //Pull Bullet velocity down over time 
-                velocity += Gravity * time;
-
+                velocity += Gravity * time  ;
+                
                 //Update bullet position over time 
-                Position += velocity * time;
+                Position += velocity * time * SpeedMultiplier;
 
                 //Slowly rotate the bullet clockwise
                 rotation += constantRotation;
@@ -90,7 +91,7 @@ namespace GameProject2
                 //TODO: update initial rotation of bullet
                 velocity = angle;
                 rotation = angle.Y / 60;
-                
+                SpeedMultiplier += speedMultiplier;
             }
         }
 
