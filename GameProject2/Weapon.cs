@@ -25,8 +25,9 @@ namespace GameProject2
             this.rotation = rotation;
         }
 
-        public void ResetGame()
+        public void ResetGame(Vector2 position)
         {
+            this.position = position;
             rotation = 0;
         }
 

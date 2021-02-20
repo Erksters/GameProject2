@@ -16,6 +16,8 @@ namespace GameProject2
 
         private int bulletHeight = 200;
 
+        private float bulletScale = (float).5;
+
         public Vector2 Position;
 
         public float rotation;
@@ -32,7 +34,7 @@ namespace GameProject2
         /// </summary>
         public Vector2 velocity = new Vector2(90, 0);
 
-        public int SpeedMultiplier = 1;
+        public int SpeedMultiplier = 10;
         /// <summary>
         /// How much gravity will affect the bullet
         /// Edit this for different bullet presets
@@ -44,7 +46,10 @@ namespace GameProject2
         {
             this.Position = position;
             this.rotation = initialRotation;
-            rectangleBounds = new BoundingRectangle( position ,bulletWidth / 4, bulletHeight / 4);
+            rectangleBounds = new BoundingRectangle(
+                                new Vector2(position.X - (bulletWidth * bulletScale ),
+                                            position.Y - (bulletHeight * bulletScale )) ,
+                                bulletWidth *  (bulletScale  /4 ), bulletHeight * (bulletScale / 4));
         }
 
         public void ResetGame(Vector2 newStartingPosition)
@@ -103,7 +108,7 @@ namespace GameProject2
                 spriteBatch.Draw(texture, new Vector2(Position.X, Position.Y),
                 null, Color.White, rotation * (float)1.2,
                 new Vector2(bulletWidth / 2, bulletHeight / 2), //TODO: resize image then insert rotation point
-                 (float).5, SpriteEffects.None, 0);
+                 bulletScale, SpriteEffects.None, 0);
             }
             
         }

@@ -11,8 +11,11 @@ namespace GameProject2
     class Explision
     {
         private SoundEffect weaponLaunch;
+        private SoundEffect impact;
+        private SoundEffect gunReload;
         private bool makeNoise = true;
         private bool showExplosion = false;
+        private bool playImpact = true;
         private Texture2D texture;
         private double animationTimer;
         private short animationFrame;
@@ -38,15 +41,20 @@ namespace GameProject2
         public void LoadContent(ContentManager content)
         {
             weaponLaunch = content.Load<SoundEffect>("Gun");
+            gunReload = content.Load<SoundEffect>("reload_small_gunwav");
+            impact = content.Load<SoundEffect>("explosion_sound");
             texture = content.Load<Texture2D>("flame_exposion");
         }
 
-        public void ResetGame()
+        public void ResetGame(Vector2 position)
         {
+            gunReload.Play();
+            Position = position;
             makeNoise = true;
             showExplosion = false;
             animationFrame = 0;
             animationTimer = 0;
+            playImpact = true;
         }
 
         /// <summary>
@@ -65,6 +73,12 @@ namespace GameProject2
             if (hit)
             {
                 showExplosion = true;
+                if (playImpact)
+                {
+                    impact.Play();
+                    playImpact = false;
+                }
+                
             }
            
         }
