@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System;
 
 namespace GameProject2
 {
@@ -15,6 +16,7 @@ namespace GameProject2
         private Bullet bullet;
         private Weapon weapon;
         private Explision explosion;
+        private Random rand;
 
         public BulletJourney()
         {
@@ -35,6 +37,7 @@ namespace GameProject2
             bullet = new Bullet(new Vector2(100, 400), 0);
             weapon = new Weapon(new Vector2(100, 430), 0);
             explosion = new Explision(new Vector2(650, 200));
+            rand = new Random();
             base.Initialize();
 
         }
@@ -63,19 +66,23 @@ namespace GameProject2
             {
                 if (target.RectangleBounds.CollidesWith(bullet.rectangleBounds)) 
                 {
-                    AimInputManager.ResetGame();
-                    bullet.ResetGame(new Vector2(100, 400));
-                    weapon.ResetGame();
                     explosion.Update(false, true);
+                    target.TargetHit = true;
                 }
             }
 
             if (AimInputManager.Reset)
             {
+                Vector2 weaponPosTemp = new Vector2(100, rand.Next(100, 800));
+                Vector2 BulletPosTemp = weaponPosTemp + new Vector2(0, -30);
+                Vector2 TargetExplosionPosTemp = new Vector2(650, rand.Next(100, 700));
+
                 AimInputManager.ResetGame();
-                bullet.ResetGame(new Vector2(100, 400));
-                weapon.ResetGame();
-                explosion.ResetGame();
+                bullet.ResetGame(BulletPosTemp);
+                weapon.ResetGame(weaponPosTemp);
+                explosion.ResetGame(TargetExplosionPosTemp);
+                
+                foreach (var target in targets) { target.ResetGame( TargetExplosionPosTemp); }
             }
 
             bullet.Update(gameTime, AimInputManager.Angle, AimInputManager.Launched, AimInputManager.SpeedMulitiplier);
@@ -93,7 +100,7 @@ namespace GameProject2
 
             _spriteBatch.DrawString(myFont, $"Direction {AimInputManager.Angle}", new Vector2(30,30),Color.Black);
             _spriteBatch.DrawString(myFont, $"Rotation {bullet.rotation}", new Vector2(30, 60), Color.Black);
-            _spriteBatch.DrawString(myFont, $"Speed Multiplier{bullet.SpeedMultiplier}", new Vector2(30, 90), Color.Black);
+            _spriteBatch.DrawString(myFont, $"Speed Multiplier {bullet.SpeedMultiplier}", new Vector2(30, 90), Color.Black);
             foreach (var target in targets)
             {
                 target.Draw(_spriteBatch);
@@ -101,6 +108,7 @@ namespace GameProject2
             bullet.Draw(gameTime, _spriteBatch);
             weapon.Draw(_spriteBatch);
             explosion.Draw(gameTime, _spriteBatch);
+
             _spriteBatch.End();
 
             base.Draw(gameTime);

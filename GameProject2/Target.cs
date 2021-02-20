@@ -34,7 +34,9 @@ namespace GameProject2
         public Target(Vector2 position)
         {
             this.position = position;
-            this.rectangleBounds = new BoundingRectangle(position, targetWidth/ 2, targetHeight / 2);
+            this.rectangleBounds = new BoundingRectangle(
+                                        new Vector2(position.X - targetWidth / 2 , position.Y - targetHeight /2), 
+                                        targetWidth, targetHeight);
         }
 
         /// <summary>
@@ -44,6 +46,14 @@ namespace GameProject2
         {
             TargetHit = targetHit;
         }
+
+        public void ResetGame(Vector2 position)
+        {
+            this.position = position;
+            this.rectangleBounds = new BoundingRectangle(position, targetWidth / 4, targetHeight / 4);
+            TargetHit = false;
+        }
+
         /// <summary>
         /// Loads the sprite texture using the provided ContentManager
         /// </summary>
@@ -63,8 +73,8 @@ namespace GameProject2
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
 
             var source = new Rectangle(0, 0, targetWidth , targetHeight);
-
-            spriteBatch.Draw(texture, position, source, Color.White);
+            if (TargetHit == false) { spriteBatch.Draw(texture, position, null, Color.White); }
+            
         }
 
     }
