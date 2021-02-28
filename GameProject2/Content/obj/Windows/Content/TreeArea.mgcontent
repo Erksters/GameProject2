@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Weapon.png</SourceFile>
-  <SourceTime>2021-02-28T10:36:19.558673-06:00</SourceTime>
-  <DestFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bin/Windows/Content/Weapon.xnb</DestFile>
-  <DestTime>2021-02-28T10:36:23.7628073-06:00</DestTime>
+  <SourceFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/TreeArea.jpg</SourceFile>
+  <SourceTime>2021-02-28T10:19:13.3595662-06:00</SourceTime>
+  <DestFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bin/Windows/Content/TreeArea.xnb</DestFile>
+  <DestTime>2021-02-28T10:54:11.6512954-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

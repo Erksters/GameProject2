@@ -42,3 +42,5 @@ C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\flame_exposion.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\reload_small_gunwav.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\explosion_sound.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\Nightime.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject2\GameProject2\bin\Debug\netcoreapp3.1\Content\TreeArea.xnb

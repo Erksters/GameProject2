@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/explosion_sound.wav</SourceFile>
-  <SourceTime>2021-02-19T23:45:32.4813068-06:00</SourceTime>
+  <SourceTime>2021-02-19T23:56:03.4013736-06:00</SourceTime>
   <DestFile>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/bin/Windows/Content/explosion_sound.xnb</DestFile>
-  <DestTime>2021-02-19T23:46:55.3394442-06:00</DestTime>
+  <DestTime>2021-02-19T23:56:04.4773575-06:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

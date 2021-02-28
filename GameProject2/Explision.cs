@@ -13,6 +13,8 @@ namespace GameProject2
         private SoundEffect weaponLaunch;
         private SoundEffect impact;
         private SoundEffect gunReload;
+        private SoundEffect nighttime;
+        private SoundEffectInstance nightTimeLoop;
         private bool makeNoise = true;
         private bool showExplosion = false;
         private bool playImpact = true;
@@ -22,6 +24,7 @@ namespace GameProject2
         private int widthOfFrame = 12;
         private int heightOfFrame = 12;
         private int heightLocationOfFrame = 0;
+        private bool newGame = true;
 
         /// <summary>
         /// Position of Explosion 
@@ -43,6 +46,8 @@ namespace GameProject2
             weaponLaunch = content.Load<SoundEffect>("Gun");
             gunReload = content.Load<SoundEffect>("reload_small_gunwav");
             impact = content.Load<SoundEffect>("explosion_sound");
+            nighttime = content.Load<SoundEffect>("Nightime");
+            nightTimeLoop = nighttime.CreateInstance();
             texture = content.Load<Texture2D>("flame_exposion");
         }
 
@@ -64,6 +69,12 @@ namespace GameProject2
         /// <param name="Launched"></param>
         public void Update(bool Launched, bool hit)
         {
+            if (newGame)
+            {
+                nightTimeLoop.IsLooped = true;
+                nightTimeLoop.Play();
+                newGame = false;
+            }
             if (Launched && makeNoise)
             {
                 weaponLaunch.Play();
@@ -117,7 +128,7 @@ namespace GameProject2
 
                 var source = new Rectangle(animationFrame * widthOfFrame, 0, widthOfFrame, heightOfFrame);
 
-                spriteBatch.Draw(texture, Position, source, Color.White, 0f, new Vector2(0, 0), 5, SpriteEffects.None, 0);
+                spriteBatch.Draw(texture, Position, source, Color.White, 0f, new Vector2(0, 0), 7, SpriteEffects.None, 0);
             }
         }
     }

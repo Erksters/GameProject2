@@ -4,16 +4,22 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/../ASSETS/Nature/TreeArea.jpg</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/ArialText.spritefont</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/explosion_sound.wav</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/flame_exposion.png</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Gun.wav</File>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Nightime.wav</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/reload_small_gunwav.wav</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/small-bullet.png</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Target.png</File>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/TreeArea.jpg</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject2/GameProject2/Content/Weapon.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>TreeArea.jpg</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
